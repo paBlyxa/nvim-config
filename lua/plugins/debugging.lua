@@ -25,6 +25,26 @@ return {
       dapui.close()
     end
 
+    dap.configurations.scala = {
+      {
+        type = "scala",
+        request = "launch",
+        name = "RunOrTest",
+        metals = {
+          runType = "runOrTestFile",
+          --args = { "firstArg", "secondArg", "thirdArg" },
+        },
+      },
+      {
+        type = "scala",
+        request = "launch",
+        name = "Test Target",
+        metals = {
+          runType = "testTarget",
+        },
+      },
+    }
+
     vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, {})
     vim.keymap.set("n", "<Leader>dc", dap.continue, {})
   end,
