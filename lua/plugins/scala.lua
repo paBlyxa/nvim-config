@@ -34,6 +34,7 @@ return {
       require("metals").setup_dap()
 
       -- LSP mappings
+      local map = vim.keymap.set
       map("n", "gD", vim.lsp.buf.definition)
       map("n", "K", vim.lsp.buf.hover)
       map("n", "gi", vim.lsp.buf.implementation)
