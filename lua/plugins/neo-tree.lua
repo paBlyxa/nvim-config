@@ -8,5 +8,17 @@ return {
   },
   config = function()
     vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', {})
+    require("neo-tree").setup({
+      window = {
+        mappings = {
+          ["P"] = {
+            "toggle_preview",
+            config = {
+              use_float = false,
+            },
+          },
+        },
+      },
+    })
   end
 }
