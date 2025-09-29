@@ -19,3 +19,6 @@ vim.diagnostic.config({
 })
 
 vim.wo.number = true
+
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>y", '"+yy')
