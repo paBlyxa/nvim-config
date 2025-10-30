@@ -13,7 +13,7 @@ vim.diagnostic.config({
   float = {
     source = "always",     -- Всегда показывать источник ошибки
     border = "rounded",    -- Скругленные рамки окна
-    header = "",           
+    header = "",
     prefix = "",
   },
 })
