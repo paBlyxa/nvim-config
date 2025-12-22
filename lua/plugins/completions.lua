@@ -10,12 +10,23 @@ return {
     },
   },
   {
+    "onsails/lspkind.nvim"
+  },
+  {
     "hrsh7th/nvim-cmp",
     config = function()
       local cmp = require("cmp")
+      local lspkind = require("lspkind")
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            ellipsis_char = "...",
+          }),
+        },
         snippet = {
           expand = function(args)
             require("luasnip").lsp_expand(args.body)
