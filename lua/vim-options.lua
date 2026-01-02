@@ -1,8 +1,23 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.g.mapleader = " "
+vim.cmd("let g:netrw_liststyle = 3")
+
+-- tab & indentation
+vim.cmd("set expandtab") -- expand tabs to spaces
+vim.cmd("set tabstop=2") -- 2 spaces per tab
+vim.cmd("set softtabstop=2") -- 2 spaces per tab when editing
+vim.cmd("set shiftwidth=2") -- 2 spaces per indentation
+vim.cmd("set autoindent") -- auto indent new lines
+
+vim.cmd("set nowrap") -- don't wrap lines
+
+-- appearance
+vim.cmd("set termguicolors") -- enable 24-bit RGB colors
+
+-- clipboard
+vim.cmd("set clipboard+=unnamedplus") -- use system clipboard
+
+-- split windows
+vim.cmd("set splitright") -- vertical splits to the right
+vim.cmd("set splitbelow") -- horizontal splits to the bottom
 
 vim.diagnostic.config({
   virtual_text = true,     -- Показывать текст диагностики рядом со строкой
