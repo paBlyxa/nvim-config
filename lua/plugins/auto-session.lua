@@ -6,8 +6,7 @@ return {
     { "<leader>wr", "<cmd>AutoSession restore<CR>", desc = "Restore Session" },
   },
   opts = {
-    auto_restore = false,
-    auto_restore_last_session = false,
+    auto_restore_enabled = false,
     suppressed_dirs = { "~/", "~/Projects", "/", "~/Downloads", "~/Desktop", "~/Documents", "~/Pictures"},
   },
 }
