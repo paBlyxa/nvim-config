@@ -4,6 +4,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      "folke/todo-comments.nvim",
     },
     config = function()
       local builtin = require("telescope.builtin")
@@ -19,6 +20,7 @@ return {
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
       vim.keymap.set('n', '<leader>fc', builtin.grep_string, { desc = 'Telescope grep string under cursor' })
+      vim.keymap.set('n', '<leader>ft', "<cmd>TodoTelescope<cr>", { desc = 'Find todos' })
     end
   },
   {
