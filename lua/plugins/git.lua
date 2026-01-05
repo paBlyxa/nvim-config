@@ -4,11 +4,25 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
+		event = { "BufReadPre", "BufNewFile" },
+		opts = {
+			on_attach = function(bufnr)
+				local gs = package.loaded.gitsigns
 
-			vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-			vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
-		end,
+				local function map(mode, l, r, desc)
+					vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+				end
+
+				-- Navigation
+				map("n", "<leader>gp", gs.preview_hunk, "Preview Hunk")
+				map("n", "<leader>gb", gs.blame_line, "Blame Line")
+				map("n", "<leader>gt", gs.toggle_current_line_blame, "Toggle Current Line Blame")
+
+				map("n", "<leader>gd", gs.diffthis, "Diff This")
+				map("n", "<leader>gD", function()
+					gs.diffthis("~")
+				end, "Diff This ~")
+			end,
+		},
 	},
 }
