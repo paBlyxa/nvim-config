@@ -13,6 +13,12 @@ return {
 			python = { "pylint" },
 		}
 
+		-- Use venv pylint if available, fallback to Mason
+		local venv = os.getenv("VIRTUAL_ENV")
+		if venv then
+			lint.linters.pylint.cmd = venv .. "/bin/pylint"
+		end
+
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

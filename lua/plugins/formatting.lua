@@ -5,6 +5,14 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+			formatters = {
+				isort = {
+					command = "/Users/pavel.fakadey_1/.local/bin/isort",
+				},
+				black = {
+					command = "/Users/pavel.fakadey_1/.local/bin/black",
+				},
+			},
 			formatters_by_ft = {
 				javascript = { "prettier" },
 				typescript = { "prettier" },
@@ -24,7 +32,7 @@ return {
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 5000,
 			},
 		})
 
@@ -32,7 +40,7 @@ return {
 			conform.format({
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 5000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
