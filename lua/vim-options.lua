@@ -20,17 +20,18 @@ vim.cmd("set splitright") -- vertical splits to the right
 vim.cmd("set splitbelow") -- horizontal splits to the bottom
 
 vim.diagnostic.config({
-  virtual_text = true,     -- Показывать текст диагностики рядом со строкой
-  signs = true,            -- Показывать значки в левой колонке
-  underline = true,        -- Подчеркивать проблемные места
-  update_in_insert = false, -- Не обновлять диагностику в режиме вставки
-  severity_sort = true,    -- Сортировать по серьезности
-  float = {
-    source = "always",     -- Всегда показывать источник ошибки
-    border = "rounded",    -- Скругленные рамки окна
-    header = "",
-    prefix = "",
-  },
+	virtual_text = true, -- Показывать текст диагностики рядом со строкой
+	signs = true, -- Показывать значки в левой колонке
+	underline = true, -- Подчеркивать проблемные места
+	update_in_insert = false, -- Не обновлять диагностику в режиме вставки
+	severity_sort = true, -- Сортировать по серьезности
+	float = {
+		source = "always", -- Всегда показывать источник ошибки
+		border = "rounded", -- Скругленные рамки окна
+		header = "",
+		prefix = "",
+	},
 })
 
 vim.wo.number = true
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
