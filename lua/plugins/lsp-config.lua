@@ -15,6 +15,7 @@ return {
 					"black",
 					"eslint_d",
 					"pylint",
+					"gopls",
 				},
 			})
 		end,
