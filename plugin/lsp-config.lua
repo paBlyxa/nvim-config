@@ -22,6 +22,9 @@ require("mason-tool-installer").setup({
 
 require("mason-lspconfig").setup({
 	auto_install = true,
+	automatic_enable = {
+		exclude = { "rust_analyzer" },
+	},
 })
 
 -- lspconfig

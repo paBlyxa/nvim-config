@@ -1,7 +1,19 @@
+-- prevent rust.vim from overriding treesitter indentexpr
+vim.g.rust_recommended_style = 0
+
 vim.pack.add({
 	{ src = "https://github.com/mrcjkb/rustaceanvim", version = vim.version.range("^6") },
 	{ src = "https://github.com/rust-lang/rust.vim" },
 	{ src = "https://github.com/saecki/crates.nvim" },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "rust",
+	callback = function()
+		vim.bo.tabstop = 4
+		vim.bo.softtabstop = 4
+		vim.bo.shiftwidth = 4
+	end,
 })
 
 -- rustaceanvim
